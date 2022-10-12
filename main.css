@@ -1,0 +1,228 @@
+* {
+    margin: 0;
+    border: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Consolas, "Lucida Console", monospace;
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    /* grid-template-rows: auto; */
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    min-height: 100vh;
+    color: white;
+    background-color: rgb(40, 40, 40);
+}
+
+.main {
+    grid-column: 2/3;
+    max-width: 100%;
+    display: block;
+}
+
+
+p#greeting {
+    font-size: 6rem;
+    color: rgb(51, 255, 0);
+    text-align: left;
+}
+
+.nav-links {
+    margin-top: 1.5rem;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+a, a:visited {
+    color: rgb(0, 255, 102);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+ul {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+li {
+    display: inline;
+    list-style-type: none;
+    margin: 5px;
+}
+
+#cursor {
+    animation: blink 1.75s infinite reverse;
+}
+
+@keyframes blink {
+    0% {
+        background-color: rgb(40, 40, 40)
+    }
+
+    49% {
+        background-color: rgb(40, 40, 40)
+    }
+
+    50% {
+        background-color: rgb(51, 255, 0)
+    }
+
+    100% {
+        background-color: rgb(51, 255, 0)
+    }
+
+
+}
+#aboutme-content {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 1rem;
+}
+
+#extra {
+    grid-column: 1/3;
+}
+
+#bio {
+    grid-column: 1/2;
+    grid-row: 1/2;
+}
+
+#pic {
+    grid-column: 2/3;
+    grid-row: 1/2;
+    margin: 0 auto;
+    border: solid white 2px;
+    border-radius:  120px / 10px 100px;
+    aspect-ratio: 4/6;
+    background: url(/assets/smol.png);
+    background-repeat: no-repeat;
+    max-width: 300px;
+    min-width: 150px;
+}
+
+h1 {
+    margin: 1rem auto;
+    padding: 0;
+}
+
+
+
+#skills {
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+    flex-wrap: wrap;
+}
+
+#skills > div {
+margin: 0 1.5rem 1.5rem 0;
+}
+
+p {
+    text-align: justify;
+    padding: .5rem;
+}
+
+#portfolio-container {
+    display: grid;
+    justify-content: space-between;
+    grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+    text-align: center;
+    gap: 1rem;
+}
+
+.portfolio-badge {
+    border: solid rgb(209, 255, 190) 10px;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.portfolio-image {
+    aspect-ratio: 6/4;
+}
+
+
+
+#recipeople-img {
+    background: url(/assets/recipe01.png)
+}
+
+#recipeople-img:hover {
+    background: url(/assets/recipe02.png)
+}
+
+#study-buddy-img {
+    background: url(/assets/sb01.png)
+}
+
+#study-buddy-img:hover {
+    background: url(/assets/sb02.png)
+}
+
+#ulti-img {
+    background: url(/assets/ulti01.png)
+}
+
+#ulti-img:hover {
+    background: url(/assets/ulti02.png)
+}
+
+#recipeople-img, #study-buddy-img, #ulti-img, #recipeople-img:hover, #study-buddy-img:hover, #ulti-img:hover, #pic{
+    background-size: 100%;
+    background-position: center center;
+
+
+}
+
+@media (max-width: 1300px) {
+    p#greeting {
+        font-size: 5rem;
+    }
+}
+
+@media (max-width: 1050px) {
+    p#greeting {
+        font-size: 4rem;
+    }
+}
+
+@media (max-width: 848px) {
+    p#greeting {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 600px) {
+    #portfolio-container, #aboutme-content {
+        display: block;
+    }
+    .portfolio-badge {
+        margin: 0 auto 1rem auto;
+    }
+    body {
+        display: block;
+        padding: 1rem;
+    }
+    p#greeting {
+        font-size: 3rem;
+    }
+}
+
+
+
+@media (max-width: 450px) {
+    p#greeting {
+        font-size: 2rem;
+    }
+}
