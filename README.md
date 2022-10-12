@@ -1,3 +1,3 @@
 # cat-friend.github.io
 
-My portfolio website, written by hand. Plain HTML and CSS.
+My portfolio website. Plain HTML and CSS.
