@@ -38,6 +38,10 @@ p#greeting {
     justify-content: space-between;
 }
 
+.sub {
+    display: none;
+}
+
 a, a:visited {
     color: rgb(0, 255, 102);
     text-decoration: none;
@@ -200,6 +204,9 @@ p {
 @media (max-width: 848px) {
     p#greeting {
         font-size: 3rem;
+    }
+    .sub {
+        display: contents;
     }
 }
 
