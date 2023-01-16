@@ -19,7 +19,7 @@ body {
 
 .main {
     grid-column: 2/3;
-    max-width: 100%;
+    min-width: 100%;
     display: block;
 }
 
@@ -36,6 +36,9 @@ p#greeting {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    position: sticky;
+    top: 0;
+    background: black;
 }
 
 .sub {
@@ -91,6 +94,7 @@ li {
     display: grid;
     grid-template-columns: 3fr 1fr;
     gap: 1rem;
+    wdith: 100%;
 }
 
 #extra {
@@ -122,15 +126,18 @@ h1 {
 
 
 
-#skills {
+/* #skills {
     display: flex;
     justify-content: space-around;
     align-content: center;
     flex-wrap: wrap;
-}
+} */
 
-#skills > div {
-margin: 0 1.5rem 1.5rem 0;
+#skills > div, #aboutme-content  {
+margin-bottom: 1rem;
+border: solid 2px white;
+border-radius: 1rem;
+padding: 1rem;
 }
 
 p {
