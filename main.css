@@ -32,10 +32,13 @@ p#greeting {
 
 .nav-links {
     margin-top: 1.5rem;
-    width: 100%;
+    min-width: 100%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    position: sticky;
+    top: .25rem;
+    background-color: rgb(40, 40, 40);
 }
 
 .sub {
