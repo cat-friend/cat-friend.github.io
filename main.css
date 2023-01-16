@@ -2,6 +2,7 @@
     margin: 0;
     border: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 body {
@@ -11,7 +12,6 @@ body {
     /* grid-template-rows: auto; */
     justify-content: center;
     align-items: center;
-    box-sizing: border-box;
     min-height: 100vh;
     color: white;
     background-color: rgb(40, 40, 40);
@@ -20,7 +20,8 @@ body {
 .main {
     grid-column: 2/3;
     min-width: 100%;
-    display: block;
+    max-width: 100%;
+    display: grid;
 }
 
 
@@ -38,7 +39,7 @@ p#greeting {
     justify-content: space-between;
     position: sticky;
     top: 0;
-    background: black;
+    background: rgb(40, 40, 40);
 }
 
 .sub {
@@ -91,10 +92,10 @@ li {
 
 }
 #aboutme-content {
-    display: grid;
-    grid-template-columns: 3fr 1fr;
+    display: block;
+    /* grid-template-columns: 3fr 1fr;
     gap: 1rem;
-    wdith: 100%;
+    min-width: 100%; */
 }
 
 #extra {
@@ -110,13 +111,11 @@ li {
     grid-column: 2/3;
     grid-row: 1/2;
     margin: 0 auto;
-    border: solid white 2px;
-    border-radius:  120px / 10px 100px;
+    border-radius:  1rem;
     aspect-ratio: 4/6;
     background: url(/assets/smol.png);
     background-repeat: no-repeat;
-    max-width: 300px;
-    min-width: 150px;
+    max-width: 350px;
 }
 
 h1 {
@@ -157,10 +156,13 @@ p {
     border: solid rgb(209, 255, 190) 10px;
     max-width: 400px;
     margin: 0 auto;
+    border-radius: 1rem;
 }
 
 .portfolio-image {
     aspect-ratio: 6/4;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
 }
 
 
@@ -206,6 +208,13 @@ p {
     p#greeting {
         font-size: 4rem;
     }
+    #portfolio-container {
+        display: block;
+    }
+    .portfolio-badge {
+        margin: 0 auto 1rem auto;
+        min-width: 100%;
+    }
 }
 
 @media (max-width: 848px) {
@@ -218,16 +227,7 @@ p {
 }
 
 @media (max-width: 600px) {
-    #portfolio-container, #aboutme-content {
-        display: block;
-    }
-    .portfolio-badge {
-        margin: 0 auto 1rem auto;
-    }
-    body {
-        display: block;
-        padding: 1rem;
-    }
+
     p#greeting {
         font-size: 3rem;
     }
