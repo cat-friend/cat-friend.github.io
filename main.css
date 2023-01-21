@@ -153,22 +153,29 @@ p {
 #portfolio-container {
     display: grid;
     justify-content: space-between;
-    grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+    grid-template-columns: repeat(auto-fit, min(400px));
     text-align: center;
     gap: 1rem;
 }
 
 .portfolio-badge {
-    border: solid rgb(209, 255, 190) 10px;
-    max-width: 400px;
+    width: 100%;
     margin: 0 auto;
+    border: 2px solid white;
     border-radius: 1rem;
+    padding: 1rem;
 }
 
 .portfolio-image {
     aspect-ratio: 6/4;
+    border-radius: 10px;
 }
 
+.portfolio-badge > p {
+    text-align: le
+}
+
+/* 400 px each portfolio badge */
 
 
 #recipeople-img {
@@ -206,7 +213,7 @@ p {
     }
 }
 
-@media (max-width: 1050px) {
+@media (max-width: 1360px) {
     p#greeting {
         font-size: 4rem;
     }
