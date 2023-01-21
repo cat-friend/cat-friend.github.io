@@ -2,25 +2,25 @@
     margin: 0;
     border: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 body {
     font-family: Consolas, "Lucida Console", monospace;
-    display: grid;
-    grid-template-columns: 1fr 3fr 1fr;
-    /* grid-template-rows: auto; */
-    justify-content: center;
-    align-items: center;
-    box-sizing: border-box;
-    min-height: 100vh;
     color: white;
     background-color: rgb(40, 40, 40);
 }
 
+#content {
+    /* display: grid;
+    grid-template-columns: 1fr 6fr 1fr;
+    justify-content: center; */
+    margin: auto;
+    width: 80%;
+}
 .main {
-    grid-column: 2/3;
+    min-width: 100%;
     max-width: 100%;
-    display: block;
 }
 
 
@@ -28,17 +28,19 @@ p#greeting {
     font-size: 6rem;
     color: rgb(51, 255, 0);
     text-align: left;
+    margin-bottom: 1.5rem;
 }
 
-.nav-links {
-    margin-top: 1.5rem;
-    min-width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+.nav-links.main {
+    /* margin-top: 1.5rem; */
+    width: 100%;
+    position: -webkit-sticky;
     position: sticky;
-    top: .25rem;
-    background-color: rgb(40, 40, 40);
+    top: -1px;
+    background: rgb(40, 40, 40);
+    z-index: 10;
+    padding: 2px;
+    align-self: start;
 }
 
 .sub {
@@ -56,15 +58,18 @@ a:hover {
 
 ul {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    align-items: center;
     flex-wrap: wrap;
     width: 100%;
 }
 
-li {
+li.links {
     display: inline;
     list-style-type: none;
     margin: 5px;
+    background: rgb(40, 40, 40);
+    z-index: 1;
 }
 
 #cursor {
@@ -91,31 +96,26 @@ li {
 
 }
 #aboutme-content {
-    display: grid;
-    grid-template-columns: 3fr 1fr;
-    gap: 1rem;
-}
-
-#extra {
-    grid-column: 1/3;
+    display: flex;
+    align-content: space-between;
+    flex-wrap: wrap;
 }
 
 #bio {
-    grid-column: 1/2;
-    grid-row: 1/2;
+    max-width: 65%;
+}
+
+#img-div {
+    max-width:35%;
 }
 
 #pic {
-    grid-column: 2/3;
-    grid-row: 1/2;
-    margin: 0 auto;
-    border: solid white 2px;
-    border-radius:  120px / 10px 100px;
+    border-radius:  1rem;
     aspect-ratio: 4/6;
     background: url(/assets/smol.png);
     background-repeat: no-repeat;
-    max-width: 300px;
-    min-width: 150px;
+    max-width: 100%;
+    max-height: 100%;
 }
 
 h1 {
@@ -125,15 +125,18 @@ h1 {
 
 
 
-#skills {
+/* #skills {
     display: flex;
     justify-content: space-around;
     align-content: center;
     flex-wrap: wrap;
-}
+} */
 
-#skills > div {
-margin: 0 1.5rem 1.5rem 0;
+#skills > div, #aboutme-content  {
+margin-bottom: 1rem;
+border: solid 2px white;
+border-radius: 1rem;
+padding: 1rem;
 }
 
 p {
@@ -144,21 +147,29 @@ p {
 #portfolio-container {
     display: grid;
     justify-content: space-between;
-    grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(0, 450px));
     text-align: center;
     gap: 1rem;
 }
 
 .portfolio-badge {
-    border: solid rgb(209, 255, 190) 10px;
-    max-width: 400px;
+    width: 100%;
     margin: 0 auto;
+    border: 2px solid white;
+    border-radius: 1rem;
+    padding: 1rem;
 }
 
 .portfolio-image {
     aspect-ratio: 6/4;
+    border-radius: 1rem;
 }
 
+.portfolio-badge > p {
+    text-align: left;
+}
+
+/* 400 px each portfolio badge */
 
 
 #recipeople-img {
@@ -188,19 +199,27 @@ p {
 #recipeople-img, #study-buddy-img, #ulti-img, #recipeople-img:hover, #study-buddy-img:hover, #ulti-img:hover, #pic{
     background-size: 100%;
     background-position: center center;
-
-
 }
 
 @media (max-width: 1300px) {
     p#greeting {
         font-size: 5rem;
     }
+    #content {
+        width: 90%;
+    }
+
 }
 
-@media (max-width: 1050px) {
+@media (max-width: 1360px) {
     p#greeting {
         font-size: 4rem;
+    }
+}
+
+@media (max-width: 1020px) {
+    #content {
+        width: 95%;
     }
 }
 
@@ -211,19 +230,17 @@ p {
     .sub {
         display: contents;
     }
+    .portfolio-badge {
+        margin: 0 auto 1rem auto;
+        min-width: 100%;
+    }
 }
 
 @media (max-width: 600px) {
-    #portfolio-container, #aboutme-content {
-        display: block;
+    #content {
+        width: 90%;
     }
-    .portfolio-badge {
-        margin: 0 auto 1rem auto;
-    }
-    body {
-        display: block;
-        padding: 1rem;
-    }
+
     p#greeting {
         font-size: 3rem;
     }
@@ -234,5 +251,15 @@ p {
 @media (max-width: 450px) {
     p#greeting {
         font-size: 2rem;
+    }
+    #aboutme-content {
+        display: block;
+    }
+    #bio, #img-div {
+        max-width: 100%;
+    }
+    #pic {
+        margin-left: auto;
+        margin-right: auto;
     }
 }
