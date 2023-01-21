@@ -149,19 +149,18 @@ p {
 }
 
 #portfolio-container {
-    display: grid;
+    display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
-    grid-template-columns: repeat(auto-fill, minmax(0, 450px));
     text-align: center;
-    gap: 1rem;
 }
 
 .portfolio-badge {
-    width: 100%;
-    margin: 0 auto;
+    max-width: 410px;
     border: 2px solid white;
     border-radius: 1rem;
     padding: 1rem;
+    margin-bottom: 1rem;
 }
 
 .portfolio-image {
@@ -172,8 +171,6 @@ p {
 .portfolio-badge > p {
     text-align: left;
 }
-
-/* 400 px each portfolio badge */
 
 
 #recipeople-img {
