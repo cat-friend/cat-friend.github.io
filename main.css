@@ -12,16 +12,15 @@ body {
 }
 
 #content {
-    display: grid;
-    grid-template-columns: 1fr 3fr 1fr;
-    justify-content: center;
-
+    /* display: grid;
+    grid-template-columns: 1fr 6fr 1fr;
+    justify-content: center; */
+    margin: auto;
+    width: 80%;
 }
 .main {
-    grid-column: 2/3;
     min-width: 100%;
     max-width: 100%;
-    display: grid;
 }
 
 
@@ -153,7 +152,7 @@ p {
 #portfolio-container {
     display: grid;
     justify-content: space-between;
-    grid-template-columns: repeat(auto-fit, min(400px));
+    grid-template-columns: repeat(auto-fill, minmax(0, 450px));
     text-align: center;
     gap: 1rem;
 }
@@ -168,11 +167,11 @@ p {
 
 .portfolio-image {
     aspect-ratio: 6/4;
-    border-radius: 10px;
+    border-radius: 1rem;
 }
 
 .portfolio-badge > p {
-    text-align: le
+    text-align: left;
 }
 
 /* 400 px each portfolio badge */
@@ -211,18 +210,21 @@ p {
     p#greeting {
         font-size: 5rem;
     }
+    #content {
+        width: 90%;
+    }
+
 }
 
 @media (max-width: 1360px) {
     p#greeting {
         font-size: 4rem;
     }
-    #portfolio-container {
-        display: block;
-    }
-    .portfolio-badge {
-        margin: 0 auto 1rem auto;
-        min-width: 100%;
+}
+
+@media (max-width: 1020px) {
+    #content {
+        width: 95%;
     }
 }
 
@@ -233,9 +235,16 @@ p {
     .sub {
         display: contents;
     }
+    .portfolio-badge {
+        margin: 0 auto 1rem auto;
+        min-width: 100%;
+    }
 }
 
 @media (max-width: 600px) {
+    #content {
+        width: 90%;
+    }
 
     p#greeting {
         font-size: 3rem;
